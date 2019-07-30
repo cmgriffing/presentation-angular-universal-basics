@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>001-intro</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="the-universe-at-your-fingertips" class="slide level1">
+<h1>The Universe at your Fingertips!</h1>
+<p>via Angular Universal</p>
+</section>
+<section class="slide level1">
+
+<section id="what-is-angular-universal" class="level2">
+<h2>What is Angular Universal?</h2>
+<blockquote>
+<p>A technology that renders Angular applications on the server.</p>
+</blockquote>
+</section>
+<section id="terms-performance" class="level2">
+<h2>Terms: Performance</h2>
+<ul>
+<li><p><strong>TTFB</strong>: Time to First Byte - seen as the time between clicking a link and the first bit of content coming in.</p></li>
+<li><p><strong>FP</strong>: First Paint - the first time any pixel becomes visible to the user.</p></li>
+<li><p><strong>FCP</strong>: First Contentful Paint - the time when requested content (article body, etc) becomes visible.</p></li>
+<li><p><strong>TTI</strong>: Time To Interactive - the time at which a page becomes interactive (events wired up, etc).</p></li>
+</ul>
+<aside class="notes">
+You might notice these in Chrome Dev Tools under the Network Tab as well
+</aside>
+</section>
+<section id="terms-rendering" class="level2">
+<h2>Terms: Rendering</h2>
+<ul>
+<li><p><strong>SSR</strong>: Server-Side Rendering - rendering a client-side or universal app to HTML on the server.</p></li>
+<li><p><strong>CSR</strong>: Client-Side Rendering - rendering an app in a browser, generally using the DOM.</p></li>
+<li><p><strong>Rehydration</strong>: “booting up” JavaScript views on the client such that they reuse the server-rendered HTML’s DOM tree and data.</p></li>
+<li><p><strong>Prerendering</strong>: running a client-side application at build time to capture its initial state as static HTML.</p></li>
+</ul>
+</section>
+<section id="section" class="level2">
+<h2></h2>
+<p><a target="_blank" href="https://developers.google.com/web/updates/2019/02/rendering-on-the-web"> <img data-src="./assets/google-infographic.png" /> </a></p>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="installation" class="level2">
+<h2>Installation</h2>
+<pre><code>ng add @nguniversal/express-engine</code></pre>
+<p><img data-src="./assets/install.png" /></p>
+<aside class="notes">
+<ul>
+<li>npx <span class="citation" data-cites="angular/cli">@angular/cli</span> instead of ng</li>
+</ul>
+</aside>
+</section>
+</section>
+<section id="demo" class="slide level1">
+<h1>Demo</h1>
+<aside class="notes">
+<ul>
+<li>Show Voyager without JS and no SSR</li>
+<li>Show Voyager without JS with SSR</li>
+</ul>
+</aside>
+</section>
+<section class="slide level1">
+
+<section id="section-1" class="level2">
+<h2></h2>
+<h1>
+Notes
+</h1>
+</section>
+<section id="browser-apis-window-document-location-etc" class="level2">
+<h2>Browser APIs (window, document, Location, etc)</h2>
+<p><strong>Not directly available</strong></p>
+<p>Angular provides wrapped services</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="im">import</span> <span class="op">{</span> Location<span class="op">,</span> DOCUMENT <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@angular/common&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">// ...</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="at">constructor</span>(</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">    <span class="kw">private</span> location<span class="op">:</span> Location<span class="op">,</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">    @<span class="at">Inject</span>(DOCUMENT)</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">    <span class="kw">private</span> document<span class="op">:</span> Document</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">) <span class="op">{</span>  <span class="op">}</span></a></code></pre></div>
+</section>
+<section id="preboot" class="level2">
+<h2>Preboot</h2>
+<p>Capture and replay events (click, keyup, etc)</p>
+<p><a href="https://github.com/angular/preboot" class="uri">https://github.com/angular/preboot</a></p>
+<p>Framework Agnostic with extra utilities for Angular</p>
+</section>
+<section id="routing" class="level2">
+<h2>Routing</h2>
+<ul>
+<li><p>Using absolute URLs for server requests</p></li>
+<li><p>Filtering request URLs: must distinguish app page requests other kinds <em>(handled automatically by NgUniversal Express schematic)</em></p></li>
+</ul>
+</section>
+<section id="static-assets-images-etc" class="level2">
+<h2>Static Assets (images, etc)</h2>
+<p>only honor requests for files from the /dist folder.</p>
+<p><strong>server.ts</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co">// Serve static files from /browser</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="va">app</span>.<span class="at">get</span>(<span class="st">&#39;*.*&#39;</span><span class="op">,</span> <span class="va">express</span>.<span class="at">static</span>(<span class="at">join</span>(DIST_FOLDER<span class="op">,</span> <span class="st">&#39;browser&#39;</span>)))<span class="op">;</span></a></code></pre></div>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="credits" class="level2">
+<h2>Credits</h2>
+<p>Links:</p>
+<ul>
+<li><p>Rendering on the Web - <a href="https://developers.google.com/web/updates/2019/02/rendering-on-the-web" class="uri">https://developers.google.com/web/updates/2019/02/rendering-on-the-web</a></p></li>
+<li><p>Angular Universal - <a href="https://angular.io/guide/universal" class="uri">https://angular.io/guide/universal</a></p></li>
+</ul>
+<style>
+code {
+  background: white;
+}
+</style>
+</section>
+</section>
+<section id="the-universe-at-your-fingertips-1" class="slide level1">
+<h1>The Universe at your Fingertips!</h1>
+<p>via Angular Universal</p>
+</section>
+<section class="slide level1">
+
+<section id="what-is-angular-universal-1" class="level2">
+<h2>What is Angular Universal?</h2>
+<blockquote>
+<p>A technology that renders Angular applications on the server.</p>
+</blockquote>
+</section>
+<section id="terms-performance-1" class="level2">
+<h2>Terms: Performance</h2>
+<ul>
+<li><p><strong>TTFB</strong>: Time to First Byte - seen as the time between clicking a link and the first bit of content coming in.</p></li>
+<li><p><strong>FP</strong>: First Paint - the first time any pixel becomes visible to the user.</p></li>
+<li><p><strong>FCP</strong>: First Contentful Paint - the time when requested content (article body, etc) becomes visible.</p></li>
+<li><p><strong>TTI</strong>: Time To Interactive - the time at which a page becomes interactive (events wired up, etc).</p></li>
+</ul>
+<aside class="notes">
+You might notice these in Chrome Dev Tools under the Network Tab as well
+</aside>
+</section>
+<section id="terms-rendering-1" class="level2">
+<h2>Terms: Rendering</h2>
+<ul>
+<li><p><strong>SSR</strong>: Server-Side Rendering - rendering a client-side or universal app to HTML on the server.</p></li>
+<li><p><strong>CSR</strong>: Client-Side Rendering - rendering an app in a browser, generally using the DOM.</p></li>
+<li><p><strong>Rehydration</strong>: “booting up” JavaScript views on the client such that they reuse the server-rendered HTML’s DOM tree and data.</p></li>
+<li><p><strong>Prerendering</strong>: running a client-side application at build time to capture its initial state as static HTML.</p></li>
+</ul>
+</section>
+<section id="section-2" class="level2">
+<h2></h2>
+<p><a target="_blank" href="https://developers.google.com/web/updates/2019/02/rendering-on-the-web"> <img data-src="./assets/google-infographic.png" /> </a></p>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="installation-1" class="level2">
+<h2>Installation</h2>
+<pre><code>ng add @nguniversal/express-engine</code></pre>
+<p><img data-src="./assets/install.png" /></p>
+<aside class="notes">
+<ul>
+<li>npx <span class="citation" data-cites="angular/cli">@angular/cli</span> instead of ng</li>
+</ul>
+</aside>
+</section>
+</section>
+<section id="demo-1" class="slide level1">
+<h1>Demo</h1>
+<aside class="notes">
+<ul>
+<li>Show Voyager without JS and no SSR</li>
+<li>Show Voyager without JS with SSR</li>
+</ul>
+</aside>
+</section>
+<section class="slide level1">
+
+<section id="section-3" class="level2">
+<h2></h2>
+<h1>
+Notes
+</h1>
+</section>
+<section id="browser-apis-window-document-location-etc-1" class="level2">
+<h2>Browser APIs (window, document, Location, etc)</h2>
+<p><strong>Not directly available</strong></p>
+<p>Angular provides wrapped services</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="im">import</span> <span class="op">{</span> Location<span class="op">,</span> DOCUMENT <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@angular/common&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">// ...</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="at">constructor</span>(</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">    <span class="kw">private</span> location<span class="op">:</span> Location<span class="op">,</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">    @<span class="at">Inject</span>(DOCUMENT)</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">    <span class="kw">private</span> document<span class="op">:</span> Document</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">) <span class="op">{</span>  <span class="op">}</span></a></code></pre></div>
+</section>
+<section id="preboot-1" class="level2">
+<h2>Preboot</h2>
+<p>Capture and replay events (click, keyup, etc)</p>
+<p><a href="https://github.com/angular/preboot" class="uri">https://github.com/angular/preboot</a></p>
+<p>Framework Agnostic with extra utilities for Angular</p>
+</section>
+<section id="routing-1" class="level2">
+<h2>Routing</h2>
+<ul>
+<li><p>Using absolute URLs for server requests</p></li>
+<li><p>Filtering request URLs: must distinguish app page requests other kinds <em>(handled automatically by NgUniversal Express schematic)</em></p></li>
+</ul>
+</section>
+<section id="static-assets-images-etc-1" class="level2">
+<h2>Static Assets (images, etc)</h2>
+<p>only honor requests for files from the /dist folder.</p>
+<p><strong>server.ts</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co">// Serve static files from /browser</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="va">app</span>.<span class="at">get</span>(<span class="st">&#39;*.*&#39;</span><span class="op">,</span> <span class="va">express</span>.<span class="at">static</span>(<span class="at">join</span>(DIST_FOLDER<span class="op">,</span> <span class="st">&#39;browser&#39;</span>)))<span class="op">;</span></a></code></pre></div>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="credits-1" class="level2">
+<h2>Credits</h2>
+<p>Links:</p>
+<ul>
+<li><p>Rendering on the Web - <a href="https://developers.google.com/web/updates/2019/02/rendering-on-the-web" class="uri">https://developers.google.com/web/updates/2019/02/rendering-on-the-web</a></p></li>
+<li><p>Angular Universal - <a href="https://angular.io/guide/universal" class="uri">https://angular.io/guide/universal</a></p></li>
+</ul>
+<style>
+code {
+  background: white;
+}
+</style>
+</section>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
